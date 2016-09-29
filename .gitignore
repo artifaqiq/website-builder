@@ -139,3 +139,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+#for Angular2
+
+typings
+public/app/**/*.js
+public/app/**/*.map
+node_modules
+jspm_packages
+bower_components
