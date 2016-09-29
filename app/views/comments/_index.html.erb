@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h5>Listing Comments</h5>
+
+<table>
+  <thead>
+    <tr>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% site.comments.each do |comment| %>
+
+      <tr>
+        <col width="100">
+        <col width="100">
+        <td><%= comment.user.id.to_s + ":" %></td>
+        <td><%= comment.body %> </td>
+        <!--<td><%= link_to 'Show', comment %></td>-->
+        <!--<td><%= link_to 'Edit', edit_comment_path(comment) %></td>-->
+
+        <% if comment.user == current_user %>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %><% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

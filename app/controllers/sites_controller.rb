@@ -4,12 +4,15 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.json
   def index
-    @sites = current_user.sites
+    @sites = Site.all
   end
 
   # GET /sites/1
   # GET /sites/1.json
   def show
+    @new_comment = Comment.new
+    @new_comment.user = current_user
+    @new_comment.site = @site
   end
 
   # GET /sites/new
